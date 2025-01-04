@@ -62,9 +62,7 @@ jobs:
       - name: Build and run tests with Maven
         run: mvn clean package
 
-      # Шаг 5: Сборка Docker-образа
-      - name: Build Docker image
-        run: docker build -t nikitkamzgb/project01-prod-user-redis .
+    
 
       # Шаг 6: Запуск Docker контейнера с приложением
       - name: Run Docker container
@@ -75,7 +73,7 @@ jobs:
           -e SPRING_DATASOURCE_USERNAME=postgres \
           -e SPRING_DATASOURCE_PASSWORD=qwe \
           -e SERVER_PORT=9999 \
-          nikitkamzgb/project01-prod-user-redis
+          nikitkamzgb/project01-prod-user-redis-iso
           sleep 30  # Даем время на запуск
 
       # Шаг 7: Проверка, что приложение работает
